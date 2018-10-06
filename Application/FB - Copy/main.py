@@ -1,5 +1,3 @@
-import ReadWriteData
-
 users = []
 posts = []
 
@@ -59,27 +57,14 @@ def register():
                 'password' : userpwd}
 
     users.append(userData)
-    # print(users)
-
-    ReadWriteData.write_data(users)
-    print("Data Stored Successfully")
+    print(users)
 
 def login():
     email = input("Enter emailId : ")
     pwd = input("Enter password : ")
 
-    # for data in users:
-    #     if data['email'] == email and data['password'] == pwd:
-    #         print("Login Success")
-    #         loginSuccess()
-    #         break
-    # else:
-    #     print("Login Failed...")
-
-    data = ReadWriteData.read_data()
-    # print(data)
-    for user in data:
-        if email in user and pwd in user:
+    for data in users:
+        if data['email'] == email and data['password'] == pwd:
             print("Login Success")
             loginSuccess()
             break
